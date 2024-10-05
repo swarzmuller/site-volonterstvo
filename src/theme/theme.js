@@ -1,7 +1,7 @@
 'use client'
 
 import { createTheme } from '@mui/material/styles';
-import { inter, poppins } from '@/theme/fonts';
+import { inter, poppins } from '@/src/theme/fonts';
 
 const theme = createTheme({
   palette: {
@@ -47,6 +47,11 @@ const theme = createTheme({
     body1: {
       fontFamily: `${poppins.style.fontFamily}, sans-serif`,
       fontSize: '24px',
+      fontWeight: 300,
+    },
+    body2: {
+      fontFamily: `${inter.style.fontFamily}, sans-serif`,
+      fontSize: '14px',
       fontWeight: 300,
     },
     caption: {
