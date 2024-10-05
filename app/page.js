@@ -1,11 +1,22 @@
-
-import styles from "./page.module.css";
-import Link from 'next/link';
+'use client'
+import { Box, Typography, useTheme } from '@mui/material';
 
 export default function Home() {
+  const {palette} = useTheme();
   return (
-    <div className={styles.page}>
-      <Link href={"/dashboard"}>to home</Link>
-    </div>
+    <Box>
+      <Typography
+        variant={'caption'}
+        color={palette.helpers.green}
+      >
+        test
+      </Typography>
+      <Typography
+        variant={'h4'}
+        color={palette.helpers.green}
+      >
+        тест українською
+      </Typography>
+    </Box>
   );
 }
