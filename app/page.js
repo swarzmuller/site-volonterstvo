@@ -1,10 +1,17 @@
-'use client'
+'use client';
+import Link from 'next/link';
 import { Box, Typography, useTheme } from '@mui/material';
+import UserSubscribeForm from '@/app/ui/UserSubscribeForm/UserSubscribeForm';
+import styles from './page.module.scss';
 
-export default function Home() {
+const Page = () => {
   const {palette} = useTheme();
+
+
   return (
-    <Box>
+    <Box
+      className={styles.siteWrapper}
+    >
       <Typography
         variant={'caption'}
         color={palette.helpers.green}
@@ -17,6 +24,17 @@ export default function Home() {
       >
         тест українською
       </Typography>
+
+      <Link
+        key={'/about-us'}
+        href={'/about-us'}
+      >
+        About Us
+      </Link>
+
+      <UserSubscribeForm />
     </Box>
   );
-}
+};
+
+export default Page;
