@@ -27,15 +27,15 @@ const UserSubscribeForm = () => {
   }
 
   useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://web.webformscr.com/apps/fc3/build/loader.js';
-    script.async = true;
-    script.onload = onLoad;
-    script.setAttribute('sp-form-id', spFormId);
-    document.body.appendChild(script);
-
+    // const script = document.createElement('script');
+    // script.src = 'https://web.webformscr.com/apps/fc3/build/loader.js';
+    // script.async = true;
+    // script.onload = onLoad;
+    // script.setAttribute('sp-form-id', spFormId);
+    // document.body.appendChild(script);
+    //
     return () => {
-      script.remove();
+      userSubscribeForm.current.remove();
     };
   }, []);
 
@@ -46,10 +46,11 @@ const UserSubscribeForm = () => {
         id={'userSubscribeForm'}
       />
 
-      {/*<Script*/}
-      {/*  src="https://web.webformscr.com/apps/fc3/build/loader.js"*/}
-      {/*  sp-form-id={spFormId}*/}
-      {/*/>*/}
+      <Script
+        src="https://web.webformscr.com/apps/fc3/build/loader.js"
+        sp-form-id={spFormId}
+        onLoad={onLoad}
+      />
     </>
   );
 };
