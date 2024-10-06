@@ -1,5 +1,8 @@
 {
   "HomePage": {
     "title": "Hello Ukraine!"
+  },
+  "AboutUs": {
+    "title": "Hello About Us!"
   }
 }
