@@ -11,7 +11,7 @@ const Header = () => {
   const handleChange = (event) => {
     const lang = event.target.value;
     setUserLocale(lang);
-    toggleLocale(lang)
+    toggleLocale(lang);
   }
 
   return(

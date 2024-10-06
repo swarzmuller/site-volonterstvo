@@ -1,4 +1,3 @@
-import { getLocale } from 'next-intl/server';
 import { Box, ThemeProvider } from '@mui/material';
 import theme from '@/src/theme/theme';
 import { LangProvider } from '@/src/context/LocaleContext/LocaleContext';
@@ -13,10 +12,8 @@ export const metadata = {
 };
 
 const RootLayout = async ( {children} ) => {
-  const locale = await getLocale();
-
   return (
-    <html lang={locale}>
+    <html>
     <body>
     <ThemeProvider theme={theme}>
       <LangProvider>
