@@ -12,18 +12,18 @@ const UserSubscribeForm = () => {
   const userSubscribeForm = useRef();
 
   const onLoad = () => {
-    const interval = setInterval(() => {
+    // const interval = setInterval(() => {
       if(!formContent) {
         formContent = document.querySelector(`[sp-hash="${spFormId}"]`);
       }
       if (formContent && userSubscribeForm.current) {
         userSubscribeForm.current.innerHTML = '';
         userSubscribeForm.current.appendChild(formContent);
-        clearInterval(interval);
+        // clearInterval(interval);
       }
-    }, 100);
+    // }, 100);
 
-    setTimeout(() => clearInterval(interval), 5000);
+    // setTimeout(() => clearInterval(interval), 5000);
   }
 
   useEffect(() => {
@@ -35,7 +35,8 @@ const UserSubscribeForm = () => {
     // document.body.appendChild(script);
     //
     return () => {
-      userSubscribeForm.current.remove();
+      console.log(userSubscribeForm.current)
+      userSubscribeForm.current?.remove();
     };
   }, []);
 
