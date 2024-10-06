@@ -11,9 +11,15 @@ export async function generateMetadata({params: {locale}}) {
   };
 }
 
+export async function generateStaticParams() {
+  return [{ lang: 'en' , locale: 'en' }, {lang: 'ua', locale: 'ua'}]
+}
+
 import { ThemeProvider } from '@mui/material';
 import theme from '@/src/theme/theme';
 import Header from '@/src/components/Header/Header';
+
+// export const runtime = 'edge';
 
 export default async function LocaleLayout({
                                              children,
