@@ -2,20 +2,28 @@
 // Create a context with a default value
 import { createContext, useEffect, useState } from 'react';
 import { IntlProvider } from 'next-intl';
+import en from '../../../messages/en.json';
+import ua from '../../../messages/ua.json';
+
+const conf = {
+  en,
+  ua,
+}
 
 export const DEFAULT_LOCALE = 'en';
 
 const LandContext = createContext();
 
-export const LangProvider = ( {children} ) => {
+export const LangProvider = ( {setL, children} ) => {
   const [locale, setLocale] = useState();
   const [messages, setMessages] = useState();
 
 
   const toggleLocale = async( selectedLocale ) => {
-    const localeMessages = await import(`../../../public/messages/${selectedLocale}.json`);
+    const localeMessages = conf[selectedLocale];
     setLocale(selectedLocale);
     setMessages(localeMessages);
+    setL(selectedLocale)
   };
 
   useEffect(() => {

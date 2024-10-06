@@ -2,7 +2,7 @@
 import { Box, FormControl, MenuItem, Select } from '@mui/material';
 import { useContext, useState } from 'react';
 import LandContext from '@/src/context/LocaleContext/LocaleContext';
-import styles from '@/app/page.module.scss';
+import styles from '@/src/app/page.module.scss';
 
 const Header = () => {
   const {locale, toggleLocale} = useContext(LandContext);

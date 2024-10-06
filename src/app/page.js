@@ -8,7 +8,7 @@ import { useTranslations } from 'next-intl';
 const Page = () => {
   const {palette} = useTheme();
   const t = useTranslations('HomePage');
-
+  console.log(t);
   return (
     <>
       <Box>
