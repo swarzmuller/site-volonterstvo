@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Box, Typography } from '@mui/material';
 import { useTranslations } from 'next-intl';
 
-const Page = () => {
+const Page = ({params: {locale}}) => {
   const t = useTranslations('AboutUs');
   return (
    <Box>
@@ -14,7 +14,7 @@ const Page = () => {
      </Typography>
      <Link
        key={"/"}
-       href={"/"}
+       href={`/${locale}/`}
      >
        Go home
      </Link>

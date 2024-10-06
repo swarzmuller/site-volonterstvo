@@ -1,11 +1,11 @@
 'use client';
+import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { Box, Typography, useTheme } from '@mui/material';
 import UserSubscribeForm from '@/src/components/UserSubscribeForm/UserSubscribeForm';
 
-import { useTranslations } from 'next-intl';
 
-const Page = () => {
+const Page = ({params: {locale}}) => {
   const {palette} = useTheme();
   const t = useTranslations('HomePage');
 
@@ -27,7 +27,7 @@ const Page = () => {
 
         <Link
           key={'/about-us'}
-          href={'/about-us'}
+          href={`/${locale}/about-us`}
         >
           About Us
         </Link>
