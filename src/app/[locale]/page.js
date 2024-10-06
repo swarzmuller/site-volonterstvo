@@ -7,7 +7,6 @@ import { unstable_setRequestLocale } from 'next-intl/server';
 
 
 const Page = ({params: {locale}}) => {
-  unstable_setRequestLocale(locale);
   const {palette} = useTheme();
   const t = useTranslations('HomePage');
 

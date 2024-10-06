@@ -5,7 +5,6 @@ import { useTranslations } from 'next-intl';
 import { unstable_setRequestLocale } from 'next-intl/server';
 
 const Page = ({params: {locale}}) => {
-  unstable_setRequestLocale(locale);
   const t = useTranslations('AboutUs');
   return (
    <Box>
