@@ -3,6 +3,7 @@ import { getMessages, unstable_setRequestLocale } from 'next-intl/server';
 
 import {getTranslations} from 'next-intl/server';
 
+export const runtime = 'edge';
 export async function generateMetadata({params: {locale}}) {
   const t = await getTranslations({locale, namespace: 'Metadata'});
 
@@ -19,7 +20,6 @@ import { ThemeProvider } from '@mui/material';
 import theme from '@/src/theme/theme';
 import Header from '@/src/components/Header/Header';
 
-// export const runtime = 'edge';
 
 export default async function LocaleLayout({
                                              children,
