@@ -12,11 +12,7 @@ const withNextIntl = createNextIntlPlugin();
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // output: 'export',
-  i18n: {
-    locales: ['en', 'ua'], // List your supported locales
-    defaultLocale: 'en',         // Default locale
-  },
+
 };
 
 export default withNextIntl(nextConfig);

@@ -2,6 +2,7 @@ import { Box, ThemeProvider } from '@mui/material';
 import { getMessages, getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { NextIntlClientProvider } from 'next-intl';
 import theme from '@/src/theme/theme';
+import { routing } from '@/src/i18n/routing';
 
 export const runtime = 'edge';
 
@@ -13,14 +14,8 @@ export async function generateMetadata({params: {locale}}) {
   };
 }
 
-export async function generateStaticParams() {
-  return {
-    paths:[
-      {params: {locale: 'en' }},
-      {params: {locale: 'ua'}},
-    ],
-    fallback:true,
-  }
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({locale}));
 }
 
 
