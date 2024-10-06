@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Box, Typography, useTheme } from '@mui/material';
 import UserSubscribeForm from '@/app/ui/UserSubscribeForm/UserSubscribeForm';
 import styles from './page.module.scss';
+import TestForm from '@/app/ui/UserSubscribeForm/TestForm/TestForm';
 
 const Page = () => {
   const {palette} = useTheme();
@@ -32,7 +33,9 @@ const Page = () => {
         About Us
       </Link>
 
-      <UserSubscribeForm />
+      {/*<UserSubscribeForm />*/}
+
+      <TestForm />
     </Box>
   );
 };

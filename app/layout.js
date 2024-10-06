@@ -1,4 +1,3 @@
-import Script from 'next/script';
 import { ThemeProvider } from '@mui/material';
 import theme from '@/src/theme/theme';
 
