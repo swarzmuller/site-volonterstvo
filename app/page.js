@@ -1,3 +1,4 @@
+'use client';
 import Link from 'next/link';
 import { Box, Typography, useTheme } from '@mui/material';
 import UserSubscribeForm from '@/src/components/UserSubscribeForm/UserSubscribeForm';
