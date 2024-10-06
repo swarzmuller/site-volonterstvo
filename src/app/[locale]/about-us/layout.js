@@ -3,7 +3,7 @@ import { getMessages, getTranslations, unstable_setRequestLocale } from 'next-in
 import { NextIntlClientProvider } from 'next-intl';
 import theme from '@/src/theme/theme';
 
-// export const runtime = 'edge';
+export const runtime = 'edge';
 
 export async function generateMetadata({params: {locale}}) {
   const t = await getTranslations({locale, namespace: 'Metadata'});
