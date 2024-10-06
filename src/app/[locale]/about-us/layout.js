@@ -14,7 +14,7 @@ export async function generateMetadata({params: {locale}}) {
 }
 
 export async function generateStaticParams() {
-  return [{ lang: 'en' , locale: 'en' }, {lang: 'ua', locale: 'ua'}]
+  return [{locale: 'en' }, {locale: 'ua'}]
 }
 
 
