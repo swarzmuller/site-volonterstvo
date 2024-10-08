@@ -16,7 +16,7 @@ const DraggableCarousel = () => {
     const [progress, setProgress] = useState(0);
     const [props, api] = useSprings(cards.length, i => ({
         ...to(i),
-        from: from(i),
+        from: from(),
     })) // Create springs for each card
 
     const { currentSlide, formatedNumber, formatedCardsNumber } = getCurrentSlide(next)

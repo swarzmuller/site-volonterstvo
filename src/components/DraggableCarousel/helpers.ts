@@ -27,7 +27,7 @@ export const to = (i: number) => ({
     delay: i * 100,
 });
 
-export const from = (_i: number) => ({ x: 0, rot: 0, scale: 1, y: 0 });
+export const from = () => ({ x: 0, rot: 0, scale: 1, y: 0 });
 export const trans = (r: number, s: number) => `rotateZ(${r}deg) scale(${s})`;
 
 export const getCurrentSlide = (el: number) => {
