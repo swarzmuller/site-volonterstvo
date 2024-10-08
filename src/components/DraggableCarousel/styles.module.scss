@@ -1,0 +1,86 @@
+.container {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0 -8px;
+}
+
+.cards {
+  position: relative;
+  height: 632px;
+}
+
+.deck {
+  position: absolute;
+  right: 34px;
+  top: 36px;
+  will-change: transform;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: none;
+  cursor: grab;
+  z-index: 5;
+}
+
+.deck > div {
+  position: relative;
+  touch-action: none;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 632px;
+  height: 598px;
+  will-change: transform;
+  border-radius: 10px;
+}
+
+.background {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.3s;
+}
+
+.controls {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px
+}
+
+.button {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #020202;
+  min-width: auto;
+  padding: 0;
+}
+
+.progressWrapper {
+  display: flex;
+  align-items: center;
+  gap: 5px
+}
+
+.progress {
+  position: relative;
+  width: 26px;
+  height: 2px;
+  background: rgba(0, 0, 0, 0.08);
+  margin: 0 10px;
+  overflow: hidden;
+
+  span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000000;
+    height: 2px;
+    transition: .1s;
+  }
+}

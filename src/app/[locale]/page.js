@@ -5,6 +5,7 @@ import { Box, ThemeProvider, Typography, useTheme } from '@mui/material';
 import theme from '@/src/theme/theme';
 import Header from '@/src/components/Header/Header';
 import Footer from '@/src/components/Footer/Footer';
+import DraggableCarousel from '@/src/components/DraggableCarousel/DraggableCarousel';
 
 
 const Page = ({params: {locale}}) => {
@@ -14,6 +15,9 @@ const Page = ({params: {locale}}) => {
   return (
     <>
       <Header locale={locale}/>
+
+      <DraggableCarousel />
+
       <Box>
         <Typography
           variant={'caption'}

@@ -12,11 +12,21 @@
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
     "@mui/material": "^6.1.2",
+    "@react-spring/web": "^9.7.4",
+    "@use-gesture/react": "^10.3.1",
     "next": "14.2.11",
     "next-intl": "^3.20.0",
     "react": "^18",
     "react-dom": "^18",
     "sass": "^1.79.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.14",
+    "typescript": "^5"
   },
   "engines": {
     "node": ">=18.18.1"
