@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react'
 import { useSprings, animated, to as interpolate } from '@react-spring/web'
 import { useDrag } from '@use-gesture/react'
-import { Button, Typography } from '@mui/material'
+import { ButtonBase, Typography } from '@mui/material'
 import ArrowLeft from '@/public/images/slider/arrow-left.png'
 import ArrowRight from '@/public/images/slider/arrow-right.png'
 import { AUTOPLAY_TIMER, CARDS_LENGHT, NEXT_DIRECTION, POGRESS_TIMER, PREV_DIRECTION, cards, from, getCurrentSlide, to, trans } from './helpers'
@@ -129,9 +129,9 @@ const DraggableCarousel = () => {
         <div className={styles.container}>
             <div className={styles.background} style={{background: currentSlide.color}}></div>
             <div className={styles.controls}>
-                <Button className={styles.button} onClick={() => buttonsDirection(PREV_DIRECTION)}>
+                <ButtonBase  className={styles.button} onClick={() => buttonsDirection(PREV_DIRECTION)}>
                     <img src={ArrowLeft.src} alt="Arrow Left" />
-                </Button>
+                </ButtonBase >
                 <div className={styles.progressWrapper}>
                      <Typography variant='body2'>{formatedNumber}</Typography>   
                     <div className={styles.progress}>
@@ -139,9 +139,9 @@ const DraggableCarousel = () => {
                     </div>
                     <Typography variant='body2'>{formatedCardsNumber}</Typography>
                 </div>
-                <Button className={styles.button} onClick={() => buttonsDirection(NEXT_DIRECTION)}>
+                <ButtonBase className={styles.button} onClick={() => buttonsDirection(NEXT_DIRECTION)}>
                     <img src={ArrowRight.src} alt="Arrow Right" />
-                </Button>
+                </ButtonBase>
             </div>
             <div className={styles.cards}>
                 {props.map(({ x, y, rot, scale }, i) => (
