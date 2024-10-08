@@ -5,11 +5,11 @@ import Foodbank  from '@/public/images/slider/foodbank.png'
 import Hygienebank  from '@/public/images/slider/hygienebank.png'
 
 export const cards = [
-    { image: Pets.src, color: '#F6E8CD',text:'Подаруй тепло хвостикам, вони готові до любові' },
-    { image: Hygienebank.src, color: '#FFE5FD',text:'Чистота та догляд, допомога тим хто потребує' },
-    { image: Foodbank.src, color: '#BDE8FA',text:'Поділитися їжею з кимось це просто' },
-    { image: Tech.src, color: '#F6E8CD',text:'Добре серце технології та трохи нашого часу змінять світ благодійності' },
-    { image: RedHart.src, color: '#BDE8FA',text:'Твої знання, час та досвід можуть змінити світ' },
+    { image: Pets.src, color: '#F6E8CD', title:'Подаруй тепло хвостикам, вони готові до любові', subtitle: 'банк їжі для тварин' },
+    { image: Hygienebank.src, color: '#FFE5FD', title:'Чистота та догляд, допомога тим хто потребує', subtitle: 'Гігієна банк' },
+    { image: Foodbank.src, color: '#BDE8FA', title:'Поділитися їжею з кимось це просто', subtitle: 'банк їжі' },
+    { image: Tech.src, color: '#F6E8CD', title:'Добре серце технології та трохи нашого часу змінять світ благодійності', subtitle: 'Технології Для благодійності' },
+    { image: RedHart.src, color: '#BDE8FA', title:'Твої знання, час та досвід можуть змінити світ', subtitle: 'Добрі справи' },
 ]
 
 export const CARDS_LENGHT = cards.length - 1;

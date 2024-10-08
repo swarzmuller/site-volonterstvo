@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react'
 import { useSprings, animated, to as interpolate } from '@react-spring/web'
 import { useDrag } from '@use-gesture/react'
-import { ButtonBase, Typography } from '@mui/material'
+import { Box, ButtonBase, Card, Typography } from '@mui/material'
 import ArrowLeft from '@/public/images/slider/arrow-left.png'
 import ArrowRight from '@/public/images/slider/arrow-right.png'
 import { AUTOPLAY_TIMER, CARDS_LENGHT, NEXT_DIRECTION, POGRESS_TIMER, PREV_DIRECTION, cards, from, getCurrentSlide, to, trans } from './helpers'
@@ -127,22 +127,31 @@ const DraggableCarousel = () => {
 
     return (
         <div className={styles.container}>
-            <div className={styles.background} style={{background: currentSlide.color}}></div>
-            <div className={styles.controls}>
-                <ButtonBase  className={styles.button} onClick={() => buttonsDirection(PREV_DIRECTION)}>
-                    <img src={ArrowLeft.src} alt="Arrow Left" />
-                </ButtonBase >
-                <div className={styles.progressWrapper}>
-                     <Typography variant='body2'>{formatedNumber}</Typography>   
-                    <div className={styles.progress}>
-                        <span style={{ width: `${progress}%` }}></span>
+            <Box className={styles.infoWrapper}>
+                <div className={styles.background} style={{ background: currentSlide.color }}></div>
+                <Typography variant='h4' style={{ position: 'relative' }}>
+                    <Typography variant='body2' style={{ position: 'relative' }}>
+                        {currentSlide.subtitle}
+                    </Typography>
+                    {currentSlide.title}
+                </Typography>
+                <div className={styles.controls}>
+                    <ButtonBase className={styles.button} disabled={next === CARDS_LENGHT} onClick={() => buttonsDirection(PREV_DIRECTION)}>
+                        <img src={ArrowLeft.src} alt="Arrow Left" />
+                    </ButtonBase >
+                    <div className={styles.progressWrapper}>
+                        <Typography variant='body2'>{formatedNumber}</Typography>
+                        <div className={styles.progress}>
+                            <span style={{ width: `${progress}%` }}></span>
+                        </div>
+                        <Typography variant='body2'>{formatedCardsNumber}</Typography>
                     </div>
-                    <Typography variant='body2'>{formatedCardsNumber}</Typography>
+                    <ButtonBase className={styles.button} onClick={() => buttonsDirection(NEXT_DIRECTION)}>
+                        <img src={ArrowRight.src} alt="Arrow Right" />
+                    </ButtonBase>
                 </div>
-                <ButtonBase className={styles.button} onClick={() => buttonsDirection(NEXT_DIRECTION)}>
-                    <img src={ArrowRight.src} alt="Arrow Right" />
-                </ButtonBase>
-            </div>
+            </Box>
+
             <div className={styles.cards}>
                 {props.map(({ x, y, rot, scale }, i) => (
                     <animated.div className={styles.deck} key={i} style={{ x, y }}>
