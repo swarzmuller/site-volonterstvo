@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react'
 import { useSprings, animated, to as interpolate } from '@react-spring/web'
 import { useDrag } from '@use-gesture/react'
-import { Box, ButtonBase, Card, Typography } from '@mui/material'
+import { Box, ButtonBase, Typography } from '@mui/material'
 import ArrowLeft from '@/public/images/slider/arrow-left.png'
 import ArrowRight from '@/public/images/slider/arrow-right.png'
 import { AUTOPLAY_TIMER, CARDS_LENGHT, NEXT_DIRECTION, POGRESS_TIMER, PREV_DIRECTION, cards, from, getCurrentSlide, to, trans } from './helpers'
