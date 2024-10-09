@@ -16,8 +16,7 @@ import {
   to,
   trans,
 } from "./helpers";
-
-import styles from "./styles.module.scss";
+import * as S from "./styles";
 
 const DraggableCarousel = ({ locale }: ILocale) => {
   const [gone] = useState(() => new Set()); // The set flags all the cards that are flicked out
@@ -111,7 +110,7 @@ const DraggableCarousel = ({ locale }: ILocale) => {
   useEffect(() => {
     gone.clear();
     api.start((i) => to(i));
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -135,16 +134,13 @@ const DraggableCarousel = ({ locale }: ILocale) => {
     return () => {
       clearTimeout(autoPlay);
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [next]);
 
   return (
-    <Box className={styles.container}>
-      <Box
-        className={styles.background}
-        style={{ background: currentSlide.color }}
-      ></Box>
-      <Box className={styles.carousel}>
+    <Box sx={{ ...S.Container }}>
+      <Box sx={{ ...S.Background(currentSlide.color) }}></Box>
+      <Box sx={{...S.Carousel}}>
         <CarouselInfo
           currentEl={next}
           direction={(value) => buttonsDirection(value)}
@@ -159,9 +155,9 @@ const DraggableCarousel = ({ locale }: ILocale) => {
             setProgress={setProgress}
           />
         </CarouselInfo>
-        <Box className={styles.cards}>
+        <Box sx={{...S.Cards}}>
           {props.map(({ x, y, rot, scale }, i) => (
-            <animated.div className={styles.deck} key={i} style={{ x, y }}>
+            <animated.div className="deck" key={i} style={{ x, y }}>
               <animated.div
                 {...bind(i)}
                 style={{
