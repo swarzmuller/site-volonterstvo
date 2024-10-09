@@ -1,37 +1,6 @@
 .container {
   position: relative;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
   margin: 0 -8px;
-}
-
-.cards {
-  position: relative;
-  height: 632px;
-}
-
-.deck {
-  position: absolute;
-  right: 34px;
-  top: 36px;
-  will-change: transform;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  touch-action: none;
-  cursor: grab;
-  z-index: 5;
-}
-
-.deck > div {
-  position: relative;
-  touch-action: none;
-  background-repeat: no-repeat;
-  background-position: center center;
-  width: 632px;
-  height: 598px;
-  will-change: transform;
-  border-radius: 10px;
 }
 
 .background {
@@ -43,16 +12,58 @@
   transition: 0.3s;
 }
 
+.carousel {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 79px 0 63px;
+}
+
 .infoWrapper {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  padding: 52px 80px
+  padding: 69px 18px 52px 85px;
+}
+
+.sliderTitle {
+  position: relative;
+  font-size: 56px;
+  margin: 17px 0 40px;
+  font-weight: 900;
+  letter-spacing: 0.7px;
+  line-height: 57px;
+}
+
+.joinBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 18px 40px;
+  background: #fff;
+  min-width: 92px;
+  color: black;
+  text-decoration: none;
+  border-radius: 46px;
+  box-shadow: 4px 5px 4px 0 rgba(0, 0, 0, 0.15);
+  margin-bottom: 10px;
+  margin-left: -6px;
+  letter-spacing: -0.5px;
+  transition: 0.3s;
+
+  &:hover {
+    box-shadow: none;
+  }
 }
 
 .controls {
-  position: relative;
+  position: absolute;
+  bottom: 53px;
+  left: 81px;
   z-index: 1;
   display: flex;
   align-items: center;
@@ -92,4 +103,33 @@
     height: 2px;
     transition: 0.1s;
   }
+}
+
+.cards {
+  position: relative;
+  height: 632px;
+}
+
+.deck {
+  position: absolute;
+  right: 92px;
+  top: 36px;
+  will-change: transform;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: none;
+  cursor: grab;
+  z-index: 5;
+}
+
+.deck > div {
+  position: relative;
+  touch-action: none;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 632px;
+  height: 598px;
+  will-change: transform;
+  border-radius: 10px;
 }

@@ -3,7 +3,19 @@
     "title": "Generated MetaData"
   },
   "HomePage": {
-    "title": "Hello Ukraine!"
+    "title": "Hello Ukraine!",
+    "slider": {
+      "titleRed": "Твої знання, час та досвід можуть змінити світ EN",
+      "titleTech": "Чистота та догляд, допомога тим хто потребує EN",
+      "titleFood": "Поділитися їжею з кимось це просто EN",
+      "titleHygiene": "Добре серце технології та трохи нашого часу змінять світ благодійності EN",
+      "titlePets": "Подаруй тепло хвостикам, вони готові до любові EN",
+      "subTitleRed": "Добрі справи EN",
+      "subTitleTech": "Технології Для благодійності EN",
+      "subTitleFood": "Банк їжі EN",
+      "subTitleHygiene": "Гігієна банк EN",
+      "subTitlePets": "Банк їжі для тварин EN"
+    }
   },
   "AboutUs": {
     "title": "Hello About Us!"

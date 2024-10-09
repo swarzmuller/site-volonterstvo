@@ -3,13 +3,14 @@ import Tech  from '@/public/images/slider/technology.png'
 import Pets  from '@/public/images/slider/pets.png'
 import Foodbank  from '@/public/images/slider/foodbank.png'
 import Hygienebank  from '@/public/images/slider/hygienebank.png'
+import { ICards } from './types'
 
-export const cards = [
-    { image: Pets.src, color: '#F6E8CD', title:'Подаруй тепло хвостикам, вони готові до любові', subtitle: 'банк їжі для тварин' },
-    { image: Hygienebank.src, color: '#FFE5FD', title:'Чистота та догляд, допомога тим хто потребує', subtitle: 'Гігієна банк' },
-    { image: Foodbank.src, color: '#BDE8FA', title:'Поділитися їжею з кимось це просто', subtitle: 'банк їжі' },
-    { image: Tech.src, color: '#F6E8CD', title:'Добре серце технології та трохи нашого часу змінять світ благодійності', subtitle: 'Технології Для благодійності' },
-    { image: RedHart.src, color: '#BDE8FA', title:'Твої знання, час та досвід можуть змінити світ', subtitle: 'Добрі справи' },
+export const cards: ICards[] = [
+    { image: Pets.src, color: '#F6E8CD', title:'slider.titlePets', subtitle: 'slider.subTitlePets', link: '/about-us' },
+    { image: Hygienebank.src, color: '#FFE5FD', title:'slider.titleHygiene', subtitle: 'slider.subTitleHygiene', link: '/about-us' },
+    { image: Foodbank.src, color: '#BDE8FA', title:'slider.titleFood', subtitle: 'slider.subTitleFood', link: '/about-us' },
+    { image: Tech.src, color: '#F6E8CD', title:'slider.titleTech', subtitle: 'slider.subTitleTech', link: '/about-us' },
+    { image: RedHart.src, color: '#BDE8FA', title:'slider.titleRed', subtitle: 'slider.subTitleRed', link: '/about-us' },
 ]
 
 export const CARDS_LENGHT = cards.length - 1;

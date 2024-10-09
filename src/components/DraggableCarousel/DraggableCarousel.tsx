@@ -2,14 +2,24 @@
 import { useEffect, useState } from 'react'
 import { useSprings, animated, to as interpolate } from '@react-spring/web'
 import { useDrag } from '@use-gesture/react'
-import { Box, ButtonBase, Typography } from '@mui/material'
-import ArrowLeft from '@/public/images/slider/arrow-left.png'
-import ArrowRight from '@/public/images/slider/arrow-right.png'
-import { AUTOPLAY_TIMER, CARDS_LENGHT, NEXT_DIRECTION, POGRESS_TIMER, PREV_DIRECTION, cards, from, getCurrentSlide, to, trans } from './helpers'
+import { Box } from '@mui/material'
+import { ILocale } from '@/src/types'
+import { ProgressBar, CarouselInfo } from '@/src/components'
+import {
+    AUTOPLAY_TIMER,
+    CARDS_LENGHT,
+    NEXT_DIRECTION,
+    PREV_DIRECTION,
+    cards,
+    from,
+    getCurrentSlide,
+    to,
+    trans
+} from './helpers'
 
 import styles from './styles.module.scss'
 
-const DraggableCarousel = () => {
+const DraggableCarousel = ({ locale }: ILocale) => {
     const [gone] = useState(() => new Set()) // The set flags all the cards that are flicked out
     const [next, setNext] = useState(CARDS_LENGHT) // Track the current card index
     const [prev, setPrev] = useState(CARDS_LENGHT) // Track the current card index
@@ -116,57 +126,36 @@ const DraggableCarousel = () => {
 
     }, [next])
 
-    useEffect(() => {
-        if (progress < 100) {
-            const timer = setTimeout(() => {
-                setProgress(progress + 1);
-            }, POGRESS_TIMER);
-            return () => clearTimeout(timer);
-        }
-    }, [progress, next]);
-
     return (
-        <div className={styles.container}>
-            <Box className={styles.infoWrapper}>
-                <div className={styles.background} style={{ background: currentSlide.color }}></div>
-                <Typography variant='h4' style={{ position: 'relative' }}>
-                    <Typography variant='body2' style={{ position: 'relative' }}>
-                        {currentSlide.subtitle}
-                    </Typography>
-                    {currentSlide.title}
-                </Typography>
-                <div className={styles.controls}>
-                    <ButtonBase className={styles.button} disabled={next === CARDS_LENGHT} onClick={() => buttonsDirection(PREV_DIRECTION)}>
-                        <img src={ArrowLeft.src} alt="Arrow Left" />
-                    </ButtonBase >
-                    <div className={styles.progressWrapper}>
-                        <Typography variant='body2'>{formatedNumber}</Typography>
-                        <div className={styles.progress}>
-                            <span style={{ width: `${progress}%` }}></span>
-                        </div>
-                        <Typography variant='body2'>{formatedCardsNumber}</Typography>
-                    </div>
-                    <ButtonBase className={styles.button} onClick={() => buttonsDirection(NEXT_DIRECTION)}>
-                        <img src={ArrowRight.src} alt="Arrow Right" />
-                    </ButtonBase>
-                </div>
+        <Box className={styles.container}>
+            <Box className={styles.background} style={{ background: currentSlide.color }}></Box >
+            <Box className={styles.carousel}>
+                <CarouselInfo
+                    currentEl={next}
+                    direction={(value) => buttonsDirection(value)}
+                    currentSlide={currentSlide}
+                    formatedNumber={formatedNumber}
+                    formatedCardsNumber={formatedCardsNumber}
+                    locale={locale}
+                >
+                    <ProgressBar progress={progress} next={next} setProgress={setProgress} />
+                </CarouselInfo>
+                <Box className={styles.cards}>
+                    {props.map(({ x, y, rot, scale }, i) => (
+                        <animated.div className={styles.deck} key={i} style={{ x, y }}>
+                            <animated.div
+                                {...bind(i)}
+                                style={{
+                                    transform: next === i ? 'rotateZ(0deg)' : interpolate([rot, scale], trans),
+                                    backgroundImage: `url(${cards[i].image})`,
+                                    transition: '0.3s'
+                                }}
+                            />
+                        </animated.div>
+                    ))}
+                </Box>
             </Box>
-
-            <div className={styles.cards}>
-                {props.map(({ x, y, rot, scale }, i) => (
-                    <animated.div className={styles.deck} key={i} style={{ x, y }}>
-                        <animated.div
-                            {...bind(i)}
-                            style={{
-                                transform: next === i ? 'rotateZ(0deg)' : interpolate([rot, scale], trans),
-                                backgroundImage: `url(${cards[i].image})`,
-                                transition: '0.3s'
-                            }}
-                        />
-                    </animated.div>
-                ))}
-            </div>
-        </div>
+        </Box>
     )
 }
 
