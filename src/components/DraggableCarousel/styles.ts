@@ -23,11 +23,31 @@ export const Carousel = css`
   max-width: 1440px;
   margin: 0 auto;
   padding: 79px 0 63px;
+
+  @media (max-width: 1400px) {
+    overflow: hidden;
+  }
+
+  @media (max-width: 960px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
 `;
 
 export const Cards = css`
   position: relative;
   height: 632px;
+
+  @media (max-width: 1400px) {
+    height: 410px;
+  }
+
+  @media (max-width: 960px) {
+    grid-area: 1;
+    width: 330px;
+    height: 300px;
+    margin: 0 auto;
+  }
 
   .deck {
     position: absolute;
@@ -41,6 +61,16 @@ export const Cards = css`
     cursor: grab;
     z-index: 5;
 
+    @media (max-width: 1400px) {
+      top: 16px;
+      right: 18px;
+    }
+
+    @media (max-width: 960px) {
+        top: 11px;
+        right: -3px;
+    }
+
     & > div {
       position: relative;
       touch-action: none;
@@ -50,6 +80,17 @@ export const Cards = css`
       height: 598px;
       will-change: transform;
       border-radius: 10px;
+
+      @media (max-width: 1400px) {
+        width: 480px;
+        height: 410px;
+        background-size: contain;
+      }
+
+      @media (max-width: 960px) {
+        width: 330px;
+        height: 300px;
+      }
     }
   }
 `;
@@ -60,12 +101,20 @@ export const InfoWrapper = css`
   align-items: flex-start;
   justify-content: space-between;
   padding: 69px 18px 52px 85px;
+
+  @media (max-width: 1400px) {
+    padding: 40px 18px 39px 13px;
+  }
 `;
 
 export const SliderSubTitle = css`
   position: relative;
   font-size: 16px;
   text-transform: uppercase;
+
+  @media (max-width: 1400px) {
+    font-size: 16px;
+  }
 `;
 
 export const SliderTitle = css`
@@ -76,6 +125,11 @@ export const SliderTitle = css`
   letter-spacing: 0.7px;
   line-height: 57px;
   font-family: ${roboto.style.fontFamily};
+
+  @media (max-width: 1400px) {
+    font-size: 40px;
+    line-height: 38px;
+  }
 `;
 
 export const JoinButton = css`
@@ -97,6 +151,13 @@ export const JoinButton = css`
   &:hover {
     box-shadow: none;
   }
+
+  @media (max-width: 1400px) {
+    min-width: 309px;
+    font-weight: 300;
+    padding: 18px;
+    font-size: 24px;
+  }
 `;
 
 export const SwitchSlider = css`
@@ -107,6 +168,11 @@ export const SwitchSlider = css`
   display: flex;
   align-items: center;
   gap: 10px;
+
+  @media (max-width: 1400px) {
+    bottom: 40px;
+    left: 13px;
+  }
 `;
 
 export const ControlButton = css`

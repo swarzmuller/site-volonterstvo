@@ -21,7 +21,6 @@ const Page = ({ params: { locale } }) => {
         <Typography variant={"h4"} color={palette.helpers.green}>
           тест українською
         </Typography>
-
         <Link key={"/about-us"} href={`/${locale}/about-us`}>
           About Us
         </Link>

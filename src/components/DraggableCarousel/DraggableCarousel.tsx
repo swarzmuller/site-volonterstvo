@@ -140,7 +140,7 @@ const DraggableCarousel = ({ locale }: ILocale) => {
   return (
     <Box sx={{ ...S.Container }}>
       <Box sx={{ ...S.Background(currentSlide.color) }}></Box>
-      <Box sx={{...S.Carousel}}>
+      <Box sx={{ ...S.Carousel }}>
         <CarouselInfo
           currentEl={next}
           direction={(value) => buttonsDirection(value)}
@@ -155,7 +155,7 @@ const DraggableCarousel = ({ locale }: ILocale) => {
             setProgress={setProgress}
           />
         </CarouselInfo>
-        <Box sx={{...S.Cards}}>
+        <Box sx={{ ...S.Cards }}>
           {props.map(({ x, y, rot, scale }, i) => (
             <animated.div className="deck" key={i} style={{ x, y }}>
               <animated.div
