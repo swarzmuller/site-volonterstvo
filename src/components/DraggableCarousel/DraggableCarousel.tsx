@@ -108,12 +108,6 @@ const DraggableCarousel = ({ locale }: ILocale) => {
   );
 
   useEffect(() => {
-    gone.clear();
-    api.start((i) => to(i));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  useEffect(() => {
     setProgress(0);
     if (next < 0) {
       gone.clear();

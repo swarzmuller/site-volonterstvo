@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import ArrowLeft from "@/public/images/slider/arrow-left.png";
 import ArrowRight from "@/public/images/slider/arrow-right.png";
+import { useViewport } from "@/src/components";
 import { CARDS_LENGHT, NEXT_DIRECTION, PREV_DIRECTION } from "./helpers";
 import { CarouselInfoProps } from "./types";
 import * as S from "./styles";
@@ -19,6 +20,7 @@ const CarouselInfo = ({
   locale,
 }: CarouselInfoProps) => {
   const t = useTranslations("HomePage");
+  const { viewportWidth } = useViewport();
 
   return (
     <Box sx={{ ...S.InfoWrapper }}>
@@ -49,26 +51,33 @@ const CarouselInfo = ({
           </Typography>
         </Link>
       </Box>
-      <Box sx={{ ...S.SwitchSlider }}>
-        <ButtonBase
-          sx={{ ...S.ControlButton }}
-          disabled={currentEl === CARDS_LENGHT}
-          onClick={() => direction(PREV_DIRECTION)}
-        >
-          <Image src={ArrowLeft.src} width={7} height={12} alt="Arrow Left" />
-        </ButtonBase>
-        <Box sx={{...S.ProgressWrapper}}>
-          <Typography variant="body2">{formatedNumber}</Typography>
-          {children}
-          <Typography variant="body2">{formatedCardsNumber}</Typography>
+      {viewportWidth > 1023 && (
+        <Box sx={{ ...S.SwitchSlider }}>
+          <ButtonBase
+            sx={{ ...S.ControlButton }}
+            disabled={currentEl === CARDS_LENGHT}
+            onClick={() => direction(PREV_DIRECTION)}
+          >
+            <Image src={ArrowLeft.src} width={7} height={12} alt="Arrow Left" />
+          </ButtonBase>
+          <Box sx={{ ...S.ProgressWrapper }}>
+            <Typography variant="body2">{formatedNumber}</Typography>
+            {children}
+            <Typography variant="body2">{formatedCardsNumber}</Typography>
+          </Box>
+          <ButtonBase
+            sx={{ ...S.ControlButton }}
+            onClick={() => direction(NEXT_DIRECTION)}
+          >
+            <Image
+              src={ArrowRight.src}
+              width={7}
+              height={12}
+              alt="Arrow Right"
+            />
+          </ButtonBase>
         </Box>
-        <ButtonBase
-          sx={{ ...S.ControlButton }}
-          onClick={() => direction(NEXT_DIRECTION)}
-        >
-          <Image src={ArrowRight.src} width={7} height={12} alt="Arrow Right" />
-        </ButtonBase>
-      </Box>
+      )}
     </Box>
   );
 };

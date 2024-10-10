@@ -8,21 +8,21 @@ import { ICards } from "./types";
 export const cards: ICards[] = [
   {
     image: Pets.src,
-    color: "#F6E8CD",
+    color: "#FFE5FD",
     title: "slider.titlePets",
     subtitle: "slider.subTitlePets",
     link: "/about-us",
   },
   {
     image: Hygienebank.src,
-    color: "#FFE5FD",
+    color: "#BDE8FA",
     title: "slider.titleHygiene",
     subtitle: "slider.subTitleHygiene",
     link: "/about-us",
   },
   {
     image: Foodbank.src,
-    color: "#BDE8FA",
+    color: "#F6E8CD",
     title: "slider.titleFood",
     subtitle: "slider.subTitleFood",
     link: "/about-us",
