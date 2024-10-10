@@ -15,7 +15,9 @@
       "subTitleFood": "Банк їжі EN",
       "subTitleHygiene": "Гігієна банк EN",
       "subTitlePets": "Банк їжі для тварин EN",
-      "join": "Долучитися EN"
+      "join": "Долучитися EN",
+      "qtyOfVolunteers": "100+",
+      "volunteers": "volunteers"
     }
   },
   "AboutUs": {

@@ -1,8 +1,9 @@
 "use client";
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 import { useSprings, animated, to as interpolate } from "@react-spring/web";
 import { useDrag } from "@use-gesture/react";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { ILocale } from "@/src/types";
 import { ProgressBar, CarouselInfo } from "@/src/components";
 import {
@@ -27,7 +28,7 @@ const DraggableCarousel = ({ locale }: ILocale) => {
     ...to(i),
     from: from(),
   })); // Create springs for each card
-
+  const t = useTranslations("HomePage");
   const { currentSlide, formatedNumber, formatedCardsNumber } =
     getCurrentSlide(next);
 
@@ -158,6 +159,11 @@ const DraggableCarousel = ({ locale }: ILocale) => {
         <Box sx={{ ...S.Cards }}>
           {props.map(({ x, y, rot, scale }, i) => (
             <animated.div className="deck" key={i} style={{ x, y }}>
+              {cards[i].text && (
+                <Typography variant="h5" sx={{ ...S.VolonteersText }}>
+                  <span>{t("slider.qtyOfVolunteers")}</span> {t(cards[i].text)}
+                </Typography>
+              )}
               <animated.div
                 {...bind(i)}
                 style={{

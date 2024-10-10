@@ -1,21 +1,26 @@
+'use client'
 import { useState, useEffect } from 'react';
 
 const useViewport = () =>  {
-  const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
-  const [viewportHeight, setViewportHeight] = useState(window.innerHeight);
+  const [viewportWidth, setViewportWidth] = useState(0);
+  const [viewportHeight, setViewportHeight] = useState(0);
 
-  useEffect(() => {
-    const handleResize = () => {
+ useEffect(() => {
+    if (typeof window !== 'undefined') {
       setViewportWidth(window.innerWidth);
       setViewportHeight(window.innerHeight);
-    };
 
-    window.addEventListener('resize', handleResize);
+      const handleResize = () => {
+        setViewportWidth(window.innerWidth);
+        setViewportHeight(window.innerHeight);
+      };
 
-    // Cleanup event listener on unmount
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
+      window.addEventListener('resize', handleResize);
+
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }
   }, []);
 
   return { viewportWidth, viewportHeight };

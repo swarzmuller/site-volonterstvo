@@ -1,3 +1,4 @@
+import theme from "@/src/theme/theme";
 import RedHart from "@/public/images/slider/red.png";
 import Tech from "@/public/images/slider/technology.png";
 import Pets from "@/public/images/slider/pets.png";
@@ -8,38 +9,39 @@ import { ICards } from "./types";
 export const cards: ICards[] = [
   {
     image: Pets.src,
-    color: "#FFE5FD",
+    color: theme.palette.helpers.paleMagenta,
     title: "slider.titlePets",
     subtitle: "slider.subTitlePets",
     link: "/about-us",
   },
   {
     image: Hygienebank.src,
-    color: "#BDE8FA",
+    color: theme.palette.helpers.skyBlue,
     title: "slider.titleHygiene",
     subtitle: "slider.subTitleHygiene",
     link: "/about-us",
   },
   {
     image: Foodbank.src,
-    color: "#F6E8CD",
+    color: theme.palette.helpers.lightGrayishOrange,
     title: "slider.titleFood",
     subtitle: "slider.subTitleFood",
     link: "/about-us",
   },
   {
     image: Tech.src,
-    color: "#F6E8CD",
+    color: theme.palette.helpers.lightGrayishOrange,
     title: "slider.titleTech",
     subtitle: "slider.subTitleTech",
     link: "/about-us",
   },
   {
     image: RedHart.src,
-    color: "#BDE8FA",
+    color: theme.palette.helpers.skyBlue,
     title: "slider.titleRed",
     subtitle: "slider.subTitleRed",
     link: "/about-us",
+    text: "slider.volunteers"
   },
 ];
 

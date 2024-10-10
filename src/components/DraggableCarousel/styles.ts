@@ -1,5 +1,6 @@
 import { css } from "@emotion/react";
 import { roboto } from "@/src/theme/fonts";
+import theme from "@/src/theme/theme";
 
 export const Container = css`
   position: relative;
@@ -67,8 +68,8 @@ export const Cards = css`
     }
 
     @media (max-width: 960px) {
-        top: 11px;
-        right: -3px;
+      top: 11px;
+      right: -3px;
     }
 
     & > div {
@@ -91,6 +92,56 @@ export const Cards = css`
         width: 330px;
         height: 300px;
       }
+    }
+  }
+`;
+
+export const VolonteersText = css`
+  position: absolute;
+  z-index: 1;
+  right: 178px;
+  top: 135px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  box-sizing: border-box;
+  font-size: 24px;
+  width: 165px;
+  height: 165px;
+  border-radius: 50%;
+  background: ${theme.palette.common.white};
+  user-select: none;
+
+  span {
+    font-size: 49px;
+    line-height: 45px;
+  }
+
+  @media (max-width: 1400px) {
+    right: 141px;
+    top: 86px;
+    width: 120px;
+    height: 120px;
+    font-size: 17px;
+
+    span {
+      font-size: 38px;
+      line-height: 33px;
+    }
+  }
+
+  @media (max-width: 960px) {
+    right: 95px;
+    top: 69px;
+    width: 86px;
+    height: 86px;
+    font-size: 12px;
+
+    span {
+      font-size: 28px;
+      line-height: 24px;
     }
   }
 `;
@@ -128,7 +179,7 @@ export const SliderTitle = css`
 
   @media (max-width: 1400px) {
     font-size: 40px;
-    line-height: 38px;
+    line-height: 42px;
   }
 `;
 
@@ -138,9 +189,9 @@ export const JoinButton = css`
   justify-content: center;
   width: fit-content;
   padding: 18px 40px;
-  background: #fff;
+  background: ${theme.palette.common.white};
   min-width: 92px;
-  color: #000000;
+  color: ${theme.palette.helpers.black};
   border-radius: 46px;
   box-shadow: 4px 5px 4px 0 rgba(0, 0, 0, 0.15);
   margin-bottom: 10px;
@@ -179,11 +230,11 @@ export const ControlButton = css`
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  border: 1px solid #020202;
+  border: 1px solid ${theme.palette.helpers.darkGrey};
 
   &:disabled {
     opacity: 0.5;
-    border: 1px solid #02020234;
+    border: 1px solid ${theme.palette.helpers.darkGreyTransparent};
   }
 `;
 
@@ -197,7 +248,7 @@ export const ProgressBar = css`
   position: relative;
   width: 26px;
   height: 2px;
-  background: rgba(0, 0, 0, 0.08);
+  background: ${theme.palette.helpers.darkGreyTransparent};
   margin: 0 10px;
   overflow: hidden;
 
@@ -205,7 +256,7 @@ export const ProgressBar = css`
     position: absolute;
     top: 0;
     left: 0;
-    background: #000000;
+    background: ${theme.palette.helpers.black};
     height: 2px;
     transition: 0.1s;
   }
