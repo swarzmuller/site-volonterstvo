@@ -25,6 +25,8 @@ const Header = ({locale}) => {
     <Box
       className={styles.siteWrapper}
       sx={{
+        position: 'relative',
+        zIndex: 1,
         height: '200px',
         backgroundColor: 'green'
       }}

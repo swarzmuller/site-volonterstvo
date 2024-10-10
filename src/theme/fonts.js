@@ -1,4 +1,4 @@
-import { Inter, Poppins } from 'next/font/google'
+import { Inter, Poppins, Roboto } from 'next/font/google'
 
 const inter = Inter({
   subsets: ['latin', 'cyrillic', 'cyrillic-ext'],
@@ -11,7 +11,14 @@ const poppins = Poppins({
   weight: ['300'],
   variable: '--font-poppins'
 })
+
+const roboto = Roboto({
+  subsets: ['latin', 'cyrillic', 'cyrillic-ext'],
+  weight: ['300', '400', '700', '900'],
+  variable: '--font-roboto'
+})
 export {
   inter,
   poppins,
+  roboto,
 }
