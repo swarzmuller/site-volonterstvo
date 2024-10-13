@@ -27,7 +27,6 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/theme/theme.ts",
-    "src/types/mui-extensions.d.ts"
   ],
   "exclude": ["node_modules"]
 }
