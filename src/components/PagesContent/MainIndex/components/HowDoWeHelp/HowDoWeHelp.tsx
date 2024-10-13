@@ -12,7 +12,7 @@ const HowDoWeHelp = () => {
       <Grid2
         container
         sx={{
-          padding: '50px 16px',
+          padding: '50px 8px',
         }}
         justifyContent="space-between"
       >

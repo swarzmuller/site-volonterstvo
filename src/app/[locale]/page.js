@@ -11,7 +11,6 @@ const Page = ({ params: { locale } }) => {
     <Box
       sx={{
         margin: "auto",
-        border: '1px solid',
         width: '100%',
         maxWidth: '1440px',
       }}

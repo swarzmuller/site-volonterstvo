@@ -12,7 +12,7 @@ const Stats = () => {
       <Grid2
         container
         sx={{
-          padding: '30px 50px',
+          padding: '30px 8px',
         }}
         spacing={4}
         justifyContent="space-between"
