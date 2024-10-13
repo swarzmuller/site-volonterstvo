@@ -22,9 +22,7 @@ const WorkDirections = () => {
            return (
              <Grid2
                key={id}
-               item
-               sm={3}
-               xs={12}
+               size={{sm: 3, xs: 12}}
                textAlign="center"
                sx={{
                  transform: `rotate(${item.rotationAngle}deg)`
@@ -48,7 +46,7 @@ const WorkDirections = () => {
                    <Typography
                      variant="h4"
                      fontSize='19px'
-                     color={palette.primary['900']}
+                     color={palette.primary["900"]}
                      sx={{
                        textTransform: 'uppercase',
                        marginBottom: '12px',

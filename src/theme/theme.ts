@@ -1,10 +1,9 @@
 "use client";
 
-import { createTheme } from "@mui/material/styles";
-import { inter, poppins, roboto } from "@/src/theme/fonts";
-import { CustomTheme } from "../components/types";
+import {createTheme, Theme} from "@mui/material/styles";
+import {inter, poppins, roboto} from "@/src/theme/fonts";
 
-const theme = createTheme({
+const theme: Theme = createTheme({
   palette: {
     primary: {
       main: "#0057B8",
@@ -78,6 +77,6 @@ const theme = createTheme({
       fontWeight: 600,
     },
   },
-}) as CustomTheme;
+});
 
 export default theme;

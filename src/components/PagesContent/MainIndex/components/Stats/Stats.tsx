@@ -2,6 +2,7 @@ import {Grid2, Stack, Typography, useTheme} from "@mui/material";
 import {useTranslations} from "next-intl";
 import {DATA} from "@/src/components/PagesContent/MainIndex/components/Stats/Stats.constants";
 import Splitter, {LOCATION} from "@/src/components/PagesContent/shared/Splitter/Splitter";
+import {GridSize} from "@mui/material/Grid2/Grid2";
 
 const Stats = () => {
   const {palette} = useTheme();
@@ -18,12 +19,11 @@ const Stats = () => {
       >
         {
           DATA.map((item, id) => {
+            const itemSize: GridSize = Number.isNaN(item.size) ? "grow" : item.size;
             return (
               <Grid2
                 key={id}
-                item
-                sm={item.size}
-                xs={12}
+                size={itemSize}
                 textAlign="center"
               >
                 <Stack

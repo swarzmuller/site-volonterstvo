@@ -1,14 +1,19 @@
+interface Data {
+  value: string,
+  description: string,
+  size: number | 'grow' | 'auto',
+}
 
-const DATA = [
+const DATA:Data[] = [
   {
     value: '100+',
     description: 'stats.volunteers',
-    size: '2',
+    size: 2,
   },
   {
     value: '30',
     description: 'stats.partnerCompanies',
-    size: '2',
+    size: 2,
   },
   {
     value: '$300K',
@@ -18,12 +23,12 @@ const DATA = [
   {
     value: '9',
     description: 'stats.ambassadors',
-    size: '2',
+    size: 2,
   },
   {
     value: '5',
     description: 'stats.friendlyFounds',
-    size: '2',
+    size: 2,
   },
 ]
 

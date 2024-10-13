@@ -1,9 +1,7 @@
-import {Stack, Typography, useTheme} from "@mui/material";
+import {Stack, Typography} from "@mui/material";
 import {useTranslations} from "next-intl";
-import Splitter, {LOCATION} from "@/src/components/PagesContent/shared/Splitter/Splitter";
 
 const HeaderHowDoWeHelp = () => {
-  const {palette} = useTheme();
   const t = useTranslations('HomePage');
   return (
     <>
