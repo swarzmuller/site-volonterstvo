@@ -16,6 +16,7 @@ const theme = createTheme({
       600: "#0054B3",
       700: "#003C80",
       800: "#00244D",
+      900: "#0C0056",
     },
     secondary: {
       main: "#FAE0FC",
@@ -39,6 +40,7 @@ const theme = createTheme({
       lightGrayishOrange: "#F6E8CD",
       paleMagenta: "#FFE5FD",
     },
+    divider: "#E7ECFF",
   },
   typography: {
     fontFamily: `${inter.style.fontFamily}, ${poppins.style.fontFamily}, ${roboto.style.fontFamily}, sans-serif`,
