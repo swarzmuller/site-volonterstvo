@@ -3,7 +3,6 @@
     "title": "Згенерована MetaData"
   },
   "HomePage": {
-    "title": "Привіт Україно!",
     "slider": {
       "titleRed": "Твої знання, час та досвід можуть змінити світ",
       "titleTech": "Добре серце технології та трохи нашого часу змінять світ благодійності",
@@ -18,6 +17,32 @@
       "join": "Долучитися",
       "qtyOfVolunteers": "100+",
       "volunteers": "волонтерів"
+    },
+    "ourAchievements": {
+      "our": "Наші",
+      "achievements": "досягнення",
+      "forToday": "на сьогодні"
+    },
+    "stats": {
+      "volunteers": "волонтерів",
+      "partnerCompanies": "Компаній партнерів",
+      "partnersTechnologies": "Технологій наданих від партнерів",
+      "ambassadors": "Амбасадорів",
+      "friendlyFounds": "Дружніх фондів"
+    },
+    "ourDirections": {
+      "our": "Наші",
+      "directions": "напрямки",
+      "ofWork": "роботи",
+      "forGoodTechnology": "Технології для добра",
+      "foodForNeedy": "Їжа для потребуючих",
+      "hygieneForNeedy": "Гігієна для потребуючих",
+      "helpAnimals": "Допомога тваринкам"
+    },
+    "howDoWeHelp": {
+      "how": "Як саме",
+      "we": "ми",
+      "help": "допомагаємо"
     }
   },
   "AboutUs": {
