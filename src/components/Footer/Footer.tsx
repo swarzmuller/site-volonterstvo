@@ -17,7 +17,11 @@ const Footer = () => {
           </Box>
           <Box>
             <Typography
+<<<<<<< HEAD
               variant='h5'
+=======
+              variant='h6'
+>>>>>>> footer
             >
               Про нас
             </Typography>
@@ -48,7 +52,11 @@ const Footer = () => {
           </Box>
           <Box>
             <Typography
+<<<<<<< HEAD
               variant='h5'
+=======
+              variant='h6'
+>>>>>>> footer
             >
               Партнерам
             </Typography>
@@ -70,7 +78,11 @@ const Footer = () => {
           </Box>
           <Box>
             <Typography
+<<<<<<< HEAD
               variant='h5'
+=======
+              variant='h6'
+>>>>>>> footer
             >
               Юридична інформація
             </Typography>
@@ -95,7 +107,11 @@ const Footer = () => {
           </Box>
           <Box>
             <Typography
+<<<<<<< HEAD
               variant='h5'
+=======
+              variant='h6'
+>>>>>>> footer
             >
               Контакти
             </Typography>
@@ -130,13 +146,31 @@ const Footer = () => {
         sx={{...footerStyles.FooterBtnBox}}
         >
           <Box>
+<<<<<<< HEAD
             <Typography variant='h6'>
+=======
+            <Typography 
+            variant='h6'
+            sx={{
+              display: 'inline',
+            }}
+            >
+>>>>>>> footer
               Хочеш долучитися в команду Charity Lab?
             </Typography>
             <Button variant="contained">Тицяй</Button>
           </Box>
           <Box>
+<<<<<<< HEAD
             <Typography variant='h6'>
+=======
+            <Typography 
+            variant='h6'
+            sx={{
+              display: 'inline',
+            }}
+            >
+>>>>>>> footer
               Маєш ідеї для Співпраці?
             </Typography>
             <Button variant="contained">Напиши нам</Button>
@@ -147,7 +181,11 @@ const Footer = () => {
         sx={{...footerStyles.FooterRightsQuoteBox}}
         >
           <Typography variant='p'>
+<<<<<<< HEAD
             Charity lab foundation 2024. All rights reserved.
+=======
+            © Charity lab foundation 2024. All rights reserved.
+>>>>>>> footer
           </Typography>
         </Box>
       </Box>
