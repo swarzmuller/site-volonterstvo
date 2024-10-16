@@ -1,6 +1,9 @@
-import {Theme } from "@mui/material/styles";
+import { Theme } from "@mui/material/styles";
 import { Palette } from "@mui/material/styles/createPalette";
 
+export interface ILocale {
+  locale: string;
+}
 interface CustomPalette extends Palette {
   helpers: Record<string, string>;
 }
@@ -18,4 +21,9 @@ declare module "@mui/material/styles" {
 // Extend the Theme interface to include the new palette type
 export interface CustomTheme extends Theme {
   palette: CustomPalette;
+}
+
+export interface LayoutProps {
+  children: React.ReactNode;
+  params: ILocale;
 }

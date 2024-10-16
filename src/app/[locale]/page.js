@@ -3,7 +3,6 @@ import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { Box, ThemeProvider, Typography, useTheme } from "@mui/material";
 import theme from "@/src/theme/theme";
-import Header from "@/src/components/Header/Header";
 import Footer from "@/src/components/Footer/Footer";
 import { DraggableCarousel } from "@/src/components";
 
@@ -12,7 +11,6 @@ const Page = ({ params: { locale } }) => {
   const t = useTranslations("HomePage");
   return (
     <>
-      <Header locale={locale} />
       <DraggableCarousel locale={locale} />
       <Box>
         <Typography variant={"caption"} color={palette.helpers.green}>
