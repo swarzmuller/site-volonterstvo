@@ -24,11 +24,14 @@
       "forToday": "на сьогодні"
     },
     "stats": {
-      "volunteers": "волонтерів",
+      "volunteers": "Волонтерів, які долучилися",
       "partnerCompanies": "Компаній партнерів",
-      "partnersTechnologies": "Технологій наданих від партнерів",
+      "partnersTechnologies": "Технологій від партнерів",
       "ambassadors": "Амбасадорів",
-      "friendlyFounds": "Дружніх фондів"
+      "friendlyFounds": "Дружніх фондів",
+      "linkTextJoin": "Долучитися",
+      "linkTextBecomePartner": "Стати партнером",
+      "linkTextLearnMore": "Дізнатися більше"
     },
     "ourDirections": {
       "our": "Наші",

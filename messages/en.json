@@ -20,16 +20,19 @@
       "volunteers": "volunteers"
     },
     "ourAchievements": {
-      "our": "Наші",
-      "achievements": "досягнення",
-      "forToday": "на сьогодні"
+      "our": "Ours",
+      "achievements": "achievements",
+      "forToday": "for today"
     },
     "stats": {
       "volunteers": "волонтерів",
       "partnerCompanies": "Компаній партнерів",
       "partnersTechnologies": "Технологій наданих від партнерів",
       "ambassadors": "Амбасадорів",
-      "friendlyFounds": "Дружніх фондів"
+      "friendlyFounds": "Дружніх фондів",
+      "linkTextJoin": "Achieved",
+      "linkTextBecomePartner": "Partners",
+      "linkTextLearnMore": "Learn more"
     },
     "ourDirections": {
       "our": "Наші",
