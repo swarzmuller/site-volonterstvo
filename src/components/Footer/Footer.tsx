@@ -1,18 +1,29 @@
 'use client';
 import { Box, Typography, List, ListItem, Button } from '@mui/material';
-import * as footerStyles from './footerStyles';
+import * as styles from './styles';
+import Image from 'next/image';
+import Instagram from "@/public/images/footer/Instagram.png";
+import Facebook from "@/public/images/footer/Facebook.png";
+import X from "@/public/images/footer/X.png";
+import Linkedin from "@/public/images/footer/Linkedin.png";
+import Logo from '@/public/images/footer/Logo.png'
 
 const Footer = () => {
   return (
     <>
       <Box
-        sx={{...footerStyles.FooterMainBox}}
+        sx={styles.FooterMainBox}
       >
         <Box
-          sx={{...footerStyles.FooterDescriptionBox}}
+          sx={styles.FooterDescriptionBox}
         >
           <Box>
-            <p>Charity lab foundation</p>
+            <Image
+              src={Logo}
+              width={119.91}
+              height={28}
+              alt="Logo"
+            />
             <p>Charity lab foundation - це благодійна організація, метою бороотьби з голодом серед Українців</p>
           </Box>
           <Box>
@@ -22,7 +33,7 @@ const Footer = () => {
               Про нас
             </Typography>
             <Typography
-              variant='p'
+              variant='body2'
             >
               <List>
                 <ListItem>
@@ -53,7 +64,7 @@ const Footer = () => {
               Партнерам
             </Typography>
             <Typography
-              variant='p'
+              variant='body2'
             >
               <List>
                 <ListItem>
@@ -75,7 +86,7 @@ const Footer = () => {
               Юридична інформація
             </Typography>
             <Typography
-              variant='p'
+              variant='body2'
             >
               <List>
                 <ListItem>
@@ -100,7 +111,7 @@ const Footer = () => {
               Контакти
             </Typography>
             <Typography
-              variant='p'
+              variant='body2'
             >
               <List>
                 <ListItem>
@@ -112,52 +123,83 @@ const Footer = () => {
                 <ListItem>
                   charityhero@gmail.com
                 </ListItem>
-                <ListItem>
-                  Ми у соціальних мережах
-                </ListItem>
-                <ListItem>
-                  Банг гігієни
-                </ListItem>
-                <ListItem>
-                  Їжа для тваринок
-                </ListItem>
+
+                <Box>
+                  <ListItem>
+                    Ми у соціальних мережах
+                  </ListItem>
+                  <Image
+                    src={Instagram}
+                    width={27.26}
+                    height={27.26}
+                    alt="Instagram"
+                  />
+                  <Image
+                    src={Linkedin}
+                    width={27.26}
+                    height={27.26}
+                    alt="Linkedin"
+                  />
+                  <Image
+                    src={X}
+                    width={27.26}
+                    height={27.26}
+                    alt="X"
+                  />
+                  <Image
+                    src={Facebook}
+                    width={27.26}
+                    height={27.26}
+                    alt="Facebook"
+                  />
+                </Box>
               </List>
             </Typography>
           </Box>
         </Box>
 
-        <Box 
-        sx={{...footerStyles.FooterBtnBox}}
+        <Box
+          sx={styles.FooterBtnBox}
         >
           <Box>
-            <Typography 
-            variant='h6'
-            sx={{
-              display: 'inline',
-            }}
+            <Typography
+              variant='h6'
+              sx={{
+                display: 'inline',
+              }}
             >
-
               Хочеш долучитися в команду Charity Lab?
             </Typography>
-            <Button variant="contained">Тицяй</Button>
+            <Button
+              variant='contained'
+              onClick={() => {
+                alert('Click')
+              }}
+            >
+              Тицяй</Button>
           </Box>
           <Box>
-            <Typography 
-            variant='h6'
-            sx={{
-              display: 'inline',
-            }}
+            <Typography
+              variant='h6'
+              sx={{
+                display: 'inline',
+              }}
             >
               Маєш ідеї для Співпраці?
             </Typography>
-            <Button variant="contained">Напиши нам</Button>
+            <Button
+              variant="contained"
+              onClick={() => {
+                alert('Write us')
+              }}
+            >Напиши нам</Button>
           </Box>
         </Box>
 
-        <Box 
-        sx={{...footerStyles.FooterRightsQuoteBox}}
+        <Box
+          sx={styles.FooterRightsQuoteBox}
         >
-          <Typography variant='p'>
+          <Typography variant='body2'>
             © Charity lab foundation 2024. All rights reserved.
           </Typography>
         </Box>
