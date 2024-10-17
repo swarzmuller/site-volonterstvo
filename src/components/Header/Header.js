@@ -1,9 +1,8 @@
 'use client';
-import { useState } from 'react';
-import { usePathname } from 'next/navigation';
+import {useState} from 'react';
+import {usePathname} from 'next/navigation';
 import Link from 'next/link';
-import { Box, FormControl, MenuItem, Select, Typography } from '@mui/material';
-import styles from '@/src/app/[locale]/page.module.scss';
+import {FormControl, MenuItem, Select, Typography} from '@mui/material';
 
 const Header = ({locale}) => {
   const pathName = usePathname();
@@ -22,15 +21,7 @@ const Header = ({locale}) => {
   }
 
   return(
-    <Box
-      className={styles.siteWrapper}
-      sx={{
-        position: 'relative',
-        zIndex: 1,
-        height: '200px',
-        backgroundColor: 'green'
-      }}
-    >
+    <header className={'container'}>
       <FormControl>
         <Select
           labelId="demo-simple-select-label"
@@ -58,7 +49,7 @@ const Header = ({locale}) => {
           </MenuItem>
         </Select>
       </FormControl>
-    </Box>
+    </header>
   )
 };
 

@@ -2,6 +2,9 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages, unstable_setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
 
+import '@/src/styles/globals.css';
+import '@/src/styles/scss/main.scss';
+
 export const runtime = "edge";
 
 export async function generateMetadata({ params: { locale } }) {
