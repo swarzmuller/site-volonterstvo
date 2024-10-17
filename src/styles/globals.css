@@ -1,0 +1,135 @@
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+}
+
+*::before,
+*::after {
+   display: inline-block;
+   margin: 0;
+   padding: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+   * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+   }
+}
+
+html {
+   scroll-behavior: smooth;
+}
+
+html,
+body {
+   height: 100%;
+}
+
+body {
+   display: flex;
+   flex-direction: column;
+   -ms-text-size-adjust: 100%;
+   -moz-text-size-adjust: 100%;
+   -webkit-text-size-adjust: 100%;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   min-width: 320px;
+   min-height: 100svh;
+   margin: 0;
+   padding: 0;
+   overflow-x: hidden;
+}
+
+main {
+   flex: 1 1 auto;
+}
+
+input,
+button,
+textarea,
+optgroup,
+select {
+   font: inherit;
+}
+
+button {
+   color: inherit;
+   background-color: transparent;
+   border: none;
+   padding: 0;
+
+   &:disabled {
+      cursor: not-allowed;
+   }
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+   display: block;
+   max-width: 100%;
+}
+
+img, svg {
+   vertical-align: middle;
+}
+
+select,
+button,
+a {
+   cursor: pointer;
+}
+
+button,
+a {
+   /*remove blue flashing in chrome when clicked*/
+   -webkit-tap-highlight-color: transparent;
+}
+
+p {
+   margin: 0;
+   padding: 0;
+}
+
+a {
+   display: inline-block;
+   color: inherit;
+   text-decoration: none;
+}
+
+ol,
+ul,
+li {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   font: inherit;
+   padding: 0;
+   margin: 0;
+   text-wrap: balance;
+}
+
+p,
+li,
+figcaption {
+   text-wrap: pretty;
+}
+
+blockquote {
+   margin: 0;
+   padding: 0;
+}
