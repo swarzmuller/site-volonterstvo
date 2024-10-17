@@ -1,6 +1,4 @@
 import { css } from "@emotion/react";
-import { roboto } from "@/src/theme/fonts";
-import theme from "@/src/theme/theme";
 
 export const FooterMainBox = css`
     //height: 454.32px;
