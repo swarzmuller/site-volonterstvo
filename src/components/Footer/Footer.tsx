@@ -1,6 +1,12 @@
 'use client';
 import { Box, Typography, List, ListItem, Button } from '@mui/material';
 import * as footerStyles from './footerStyles';
+import Image from 'next/image';
+import Instagram from "@/public/images/footer/Instagram.png";
+import Facebook from "@/public/images/footer/Facebook.png";
+import X from "@/public/images/footer/X.png";
+import Linkedin from "@/public/images/footer/Linkedin.png";
+import Logo from '@/public/images/footer/Logo.png'
 
 const Footer = () => {
   return (
@@ -12,7 +18,12 @@ const Footer = () => {
           sx={{...footerStyles.FooterDescriptionBox}}
         >
           <Box>
-            <p>Charity lab foundation</p>
+            <Image
+              src={Logo}
+              width={119.91}
+              height={28}
+              alt="Logo"
+            />
             <p>Charity lab foundation - це благодійна організація, метою бороотьби з голодом серед Українців</p>
           </Box>
           <Box>
@@ -112,15 +123,36 @@ const Footer = () => {
                 <ListItem>
                   charityhero@gmail.com
                 </ListItem>
-                <ListItem>
-                  Ми у соціальних мережах
-                </ListItem>
-                <ListItem>
-                  Банг гігієни
-                </ListItem>
-                <ListItem>
-                  Їжа для тваринок
-                </ListItem>
+
+                <Box>
+                  <ListItem>
+                    Ми у соціальних мережах
+                  </ListItem>
+                  <Image 
+                    src={Instagram}
+                    width={27.26}
+                    height={27.26}
+                    alt="Instagram"
+                  />
+                  <Image 
+                    src={Linkedin}
+                    width={27.26}
+                    height={27.26}
+                    alt="Linkedin"
+                  />
+                  <Image 
+                    src={X}
+                    width={27.26}
+                    height={27.26}
+                    alt="X"
+                  />
+                  <Image 
+                    src={Facebook}
+                    width={27.26}
+                    height={27.26}
+                    alt="Facebook"
+                  />
+                </Box>
               </List>
             </Typography>
           </Box>
@@ -133,13 +165,18 @@ const Footer = () => {
             <Typography 
             variant='h6'
             sx={{
-              display: 'inline',
+              display: 'block',
             }}
             >
 
               Хочеш долучитися в команду Charity Lab?
             </Typography>
-            <Button variant="contained">Тицяй</Button>
+            <button
+            onClick={() => {
+              alert('Click')
+            }}
+            >
+              Тицяй</button>
           </Box>
           <Box>
             <Typography 
@@ -150,7 +187,12 @@ const Footer = () => {
             >
               Маєш ідеї для Співпраці?
             </Typography>
-            <Button variant="contained">Напиши нам</Button>
+            <Button 
+            variant="contained"
+            onClick={() => {
+              alert('Write us')
+            }}
+            >Напиши нам</Button>
           </Box>
         </Box>
 
