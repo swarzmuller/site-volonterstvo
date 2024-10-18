@@ -2,7 +2,7 @@ import { Inter, Poppins, Roboto } from 'next/font/google'
 
 const inter = Inter({
   subsets: ['latin', 'cyrillic', 'cyrillic-ext'],
-  weight: ['600', '800'],
+  weight: ['300', '600', '800'],
   variable: '--font-inter'
 })
 

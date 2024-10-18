@@ -6,7 +6,9 @@ import { getTranslations } from "next-intl/server";
 
 export const runtime = "edge";
 
-export async function generateMetadata({ params: { locale } }: Pick<LayoutProps, 'params'>) {
+export async function generateMetadata({
+  params: { locale },
+}: Pick<LayoutProps, "params">) {
   const t = await getTranslations({ locale, namespace: "Metadata" });
 
   return {
@@ -18,15 +20,20 @@ export async function generateStaticParams() {
   return [{ locale: "en" }, { locale: "ua" }];
 }
 
-export default async function LocaleLayout({ children, params: { locale } }: LayoutProps) {
+export default async function LocaleLayout({
+  children,
+  params: { locale },
+}: LayoutProps) {
   unstable_setRequestLocale(locale);
   const messages = await getMessages();
 
   return (
     <html lang={locale}>
       <body style={{ overflowX: "hidden", margin: 0 }}>
-        <Header />
-        <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider messages={messages}>
+          <Header />
+          {children}
+        </NextIntlClientProvider>
       </body>
     </html>
   );

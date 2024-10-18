@@ -168,12 +168,14 @@ const DraggableCarousel = ({ locale }: ILocale) => {
                   backgroundImage: `url(${cards[i].image})`,
                   transition: "0.3s",
                 }}
-              />
-              {cards[i].text && (
-                <Typography variant="h5" sx={{ ...S.VolonteersText }}>
-                  <span>{t("slider.qtyOfVolunteers")}</span> {t(cards[i].text)}
-                </Typography>
-              )}
+              >
+                {cards[i].text && (
+                  <Typography variant="h5" sx={{ ...S.VolonteersText }}>
+                    <span>{t("slider.qtyOfVolunteers")}</span>{" "}
+                    {t(cards[i].text)}
+                  </Typography>
+                )}
+              </animated.div>
             </animated.div>
           ))}
         </Box>

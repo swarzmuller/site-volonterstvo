@@ -5,14 +5,14 @@ import { useLocale } from "next-intl";
 import Link from "next/link";
 import {
   Box,
-  FormControl,
   MenuItem,
   Select,
   SelectChangeEvent,
   Typography,
 } from "@mui/material";
 import Image from "next/image";
-import Logo from "@/public/images/header/logo.svg";
+import { Logo } from "@/public";
+import { LayoutWrapper } from "@/src/components";
 import Menu from "./Menu";
 import * as S from "./styles";
 
@@ -33,28 +33,29 @@ const Header = () => {
   };
 
   return (
-    <Box sx={{ ...S.Header }}>
-      <Link href="/">
-        <Image src={Logo.src} width={192} height={45} alt="Logo" />
-      </Link>
-      <Menu />
-      <FormControl>
+    <Box sx={S.Header}>
+      <LayoutWrapper sx={S.Layout}>
+        <Link href="/">
+          <Image src={Logo.src} width={192} height={45} alt="Logo" />
+        </Link>
+        <Menu />
         <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
+          sx={S.Select}
           value={userLocale}
-          label="Age"
           onChange={handleChange}
-          renderValue={(value) => <Typography>{value}</Typography>}
+          IconComponent={() => null}
+          renderValue={(value) => (
+            <Typography sx={S.LangText}>{value}</Typography>
+          )}
         >
-          <MenuItem value={"en"}>
+          <MenuItem sx={S.Option} value={"en"}>
             <Link href={redirectedPathName("en")}>EN</Link>
           </MenuItem>
-          <MenuItem value={"ua"}>
+          <MenuItem sx={S.Option} value={"ua"}>
             <Link href={redirectedPathName("ua")}>UA</Link>
           </MenuItem>
         </Select>
-      </FormControl>
+      </LayoutWrapper>
     </Box>
   );
 };
