@@ -2,27 +2,26 @@
 import { Box, ThemeProvider } from "@mui/material";
 import theme from "@/src/theme/theme";
 // import Footer from "@/src/components/Footer/Footer";
-import { DraggableCarousel, LayoutWrapper } from "@/src/components";
+import { DraggableCarousel } from "@/src/components";
 import MainIndex from "@/src/components/PagesContent/MainIndex/MainIndex";
+import { LayoutProps } from "@/src/components/types";
 
-const Page = ({ params: { locale } }) => {
+const Page = ({ params: { locale } } : LayoutProps) => {
   return (
     <Box>
       <DraggableCarousel locale={locale} />
-      <LayoutWrapper>
-        <MainIndex />
-      </LayoutWrapper>
+      <MainIndex />
       {/* <Footer /> */}
     </Box>
   );
 };
 
-const ThemeWrapper = (props) => {
-  return (
-    <ThemeProvider theme={theme}>
-      <Page {...props} />
-    </ThemeProvider>
-  );
+const ThemeWrapper = (props: LayoutProps) => {
+   return (
+      <ThemeProvider theme={theme}>
+         <Page {...props} />
+      </ThemeProvider>
+   );
 };
 
 export default ThemeWrapper;

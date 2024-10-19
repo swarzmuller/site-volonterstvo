@@ -5,17 +5,19 @@ import HeaderWorkDirections from "@/src/components/PagesContent/MainIndex/compon
 import HeaderHowDoWeHelp from "@/src/components/PagesContent/MainIndex/components/Headers/HeaderHowDoWeHelp";
 
 const MainIndex = () => {
-  return (
-    <>
-      <HeaderAchievements />
-      <Stats/>
-
-      <HeaderWorkDirections />
-      <WorkDirections />
-
-      <HeaderHowDoWeHelp />
-    </>
-  );
+   return (
+      <>
+         <section className={'container'}>
+            <HeaderAchievements/>
+            <Stats/>
+         </section>
+         <section className={'container'}>
+            <HeaderWorkDirections/>
+            <WorkDirections/>
+         </section>
+         <HeaderHowDoWeHelp/>
+      </>
+   );
 };
 
 export default MainIndex;
