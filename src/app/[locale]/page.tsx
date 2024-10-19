@@ -4,9 +4,9 @@ import theme from "@/src/theme/theme";
 // import Footer from "@/src/components/Footer/Footer";
 import { DraggableCarousel } from "@/src/components";
 import MainIndex from "@/src/components/PagesContent/MainIndex/MainIndex";
-import { LayoutProps } from "@/src/components/types";
+import { ILocale } from "@/src/components/types";
 
-const Page = ({ params: { locale } } : LayoutProps) => {
+const Page = ({ params: { locale } }: { params: ILocale }) => {
   return (
     <Box>
       <DraggableCarousel locale={locale} />
@@ -16,12 +16,12 @@ const Page = ({ params: { locale } } : LayoutProps) => {
   );
 };
 
-const ThemeWrapper = (props: LayoutProps) => {
-   return (
-      <ThemeProvider theme={theme}>
-         <Page {...props} />
-      </ThemeProvider>
-   );
+const ThemeWrapper = (props: { params: ILocale }) => {
+  return (
+    <ThemeProvider theme={theme}>
+      <Page {...props} />
+    </ThemeProvider>
+  );
 };
 
 export default ThemeWrapper;
