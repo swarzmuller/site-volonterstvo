@@ -4,7 +4,6 @@ import { useTranslations } from "next-intl";
 import { useSprings, animated, to as interpolate } from "@react-spring/web";
 import { useDrag } from "@use-gesture/react";
 import { Box, Typography } from "@mui/material";
-import { ILocale } from "@/src/types";
 import { ProgressBar, CarouselInfo } from "@/src/components";
 import {
   AUTOPLAY_TIMER,
@@ -18,6 +17,7 @@ import {
   trans,
 } from "./helpers";
 import * as S from "./styles";
+import { ILocale } from "../types";
 
 const DraggableCarousel = ({ locale }: ILocale) => {
   const [gone] = useState(() => new Set()); // The set flags all the cards that are flicked out
@@ -139,8 +139,7 @@ const DraggableCarousel = ({ locale }: ILocale) => {
   }, [next]);
 
   return (
-    <Box sx={{ ...S.Container }}>
-      <Box sx={{ ...S.Background(currentSlide.color) }}></Box>
+    <Box sx={{ ...S.Container(currentSlide.color) }}>
       <Box sx={{ ...S.Carousel }}>
         <CarouselInfo
           currentEl={next}
@@ -159,11 +158,6 @@ const DraggableCarousel = ({ locale }: ILocale) => {
         <Box sx={{ ...S.Cards }}>
           {props.map(({ x, y, rot, scale }, i) => (
             <animated.div className="deck" key={i} style={{ x, y }}>
-              {cards[i].text && (
-                <Typography variant="h5" sx={{ ...S.VolonteersText }}>
-                  <span>{t("slider.qtyOfVolunteers")}</span> {t(cards[i].text)}
-                </Typography>
-              )}
               <animated.div
                 {...bind(i)}
                 style={{
@@ -174,7 +168,14 @@ const DraggableCarousel = ({ locale }: ILocale) => {
                   backgroundImage: `url(${cards[i].image})`,
                   transition: "0.3s",
                 }}
-              />
+              >
+                {cards[i].text && (
+                  <Typography variant="h5" sx={{ ...S.VolonteersText }}>
+                    <span>{t("slider.qtyOfVolunteers")}</span>{" "}
+                    {t(cards[i].text)}
+                  </Typography>
+                )}
+              </animated.div>
             </animated.div>
           ))}
         </Box>

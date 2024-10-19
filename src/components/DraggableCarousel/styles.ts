@@ -2,17 +2,9 @@ import { css } from "@emotion/react";
 import { roboto } from "@/src/theme/fonts";
 import theme from "@/src/theme/theme";
 
-export const Container = css`
+export const Container = (background: string) => css`
   position: relative;
   margin: 0 -8px;
-`;
-
-export const Background = (background: string) => css`
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
   transition: 0.3s;
   background: ${background};
 `;
@@ -23,7 +15,7 @@ export const Carousel = css`
   grid-template-columns: 1fr 1fr;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 79px 0 63px;
+  padding: 120px 0 63px;
 
   @media (max-width: 1400px) {
     overflow: hidden;

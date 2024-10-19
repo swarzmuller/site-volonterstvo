@@ -1,4 +1,4 @@
-import { ILocale } from "@/src/types";
+import { ILocale } from "../types";
 
 export interface ICards {
   image: string;

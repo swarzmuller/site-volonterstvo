@@ -1,3 +1,4 @@
+"use client";
 import { useEffect } from "react";
 import { Box } from "@mui/material";
 import { POGRESS_TIMER } from "./helpers";
@@ -16,7 +17,7 @@ const ProgressBar = ({ progress, next, setProgress }: ProgressBarProps) => {
   }, [progress, next]);
 
   return (
-    <Box sx={{...S.ProgressBar}}>
+    <Box sx={{ ...S.ProgressBar }}>
       <span style={{ width: `${progress}%` }}></span>
     </Box>
   );

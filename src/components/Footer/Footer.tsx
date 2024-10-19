@@ -205,7 +205,7 @@ const Footer = () => {
         </Box>
       </Box>
     </>
-  )
+  );
 };
 
 export default Footer;

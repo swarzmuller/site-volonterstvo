@@ -42,7 +42,11 @@ const CarouselInfo = ({
           {t(currentSlide.title)}
         </Typography>
         <Link
-          style={{ textDecoration: "none" }}
+          style={{
+            display: "block",
+            width: "fit-content",
+            textDecoration: "none",
+          }}
           key={"/about-us"}
           href={`${locale}${currentSlide.link}`}
         >
